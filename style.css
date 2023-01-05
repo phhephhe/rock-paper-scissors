@@ -1,25 +1,37 @@
-body{
-    text-align:center;
+body {
+    box-sizing: border-box;
+    text-align: center;
     font-family:sans-serif;
 }
 button, .computer-choice{
     background: #F96666;
-    border:0;
-    padding:10px;
-    border-radius:15px;
-    cursor: pointer;
+    box-sizing: border-box;
     display: inline-block;
     width: 60px;
     height: 60px;
-    box-sizing: border-box;
+    border: 0;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 15px;
 }
-svg{
+svg {
     height: 40px;
     fill: #fff;
 }
-.computer-choice svg{
-    display:none;
+.computer-choice svg {
+    display: none;
 }
 .result{
     margin-top: 20px;
+}
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+.computer-choice {
+    animation: spin 1s linear infinite;
+    transition: all .5s linear;
+}
+.computer-choice.stop-spinning{
+    animation: none;
 }
